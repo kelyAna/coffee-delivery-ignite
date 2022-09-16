@@ -8,7 +8,7 @@ export const IntroSectionContainer = styled.div`
 
   gap: 56px;
 `
-
+ 
 export const TitleSection = styled.div`
   p {
     font-size: 3rem;
