@@ -1,0 +1,17 @@
+:root {
+  --white: #fff;
+  --purple-100: #EBE5F9;
+  --purple-400: #4B2995;
+
+  --yellow-100: #F1E9C9;
+}
+
+body {
+  padding: 2.063rem 10rem 2.063rem 10rem;
+}
+
+body, input, textarea, button {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
