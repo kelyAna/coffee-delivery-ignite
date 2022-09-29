@@ -1,4 +1,4 @@
-import { IntroSectionContainer, Item, ItemSection, ItemsSection, TitleSection } from "./styles"
+import { HeaderSection, IntroSectionContainer, Item, ItemSection, ItemsSection, TitleSection } from "./styles"
 
 import coffeImage from '../../assets/coffee-image.svg'
 import itemSectionIcon1 from '../../assets/item-section-icon-1.svg'
@@ -9,9 +9,11 @@ import itemSectionIcon4 from '../../assets/item-section-icon-4.svg'
 export const IntroSection = () => {
   return (
     <IntroSectionContainer>
-      <TitleSection>
-        <p>Encontre o café perfeito para qualquer hora do dia</p>
-        <span>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</span>
+      <HeaderSection>
+        <TitleSection>
+          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
+          <p>Com o Coffee Delivery você recebe seu café onde estiver, a qualquer hora</p>
+        </TitleSection>
 
         <ItemsSection>
           <ItemSection>
@@ -35,7 +37,7 @@ export const IntroSection = () => {
             </Item>
          </ItemSection>
         </ItemsSection>
-      </TitleSection>
+      </HeaderSection>
       <img src={coffeImage} />
     </IntroSectionContainer>
   )

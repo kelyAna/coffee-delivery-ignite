@@ -6,24 +6,29 @@ export const IntroSectionContainer = styled.div`
   justify-content: space-between;
   margin-top: 94px;
 
-  gap: 56px;
+  gap: 60px;
 `
  
-export const TitleSection = styled.div`
-  p {
-    font-size: 3rem;
-    font-weight: 800;
-  }
+export const HeaderSection = styled.div``
 
-  span {
-    font-weight: 400;
-    font-size: 1.25rem;
-    color: #403937;
-    font-stretch: 100;
-    color: #403937;
-    font-style: normal;
-  }
+export const TitleSection = styled.div`
+  width: 600px;
+
+  h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      font-family: 'Baloo 2';
+
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #403937;
+
+      width: 500px;
+    }
 `
+
 
 export const ItemsSection = styled.div`
   margin-top: 66px;
