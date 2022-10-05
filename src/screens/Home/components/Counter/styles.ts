@@ -18,6 +18,7 @@ export const CounterButton = styled.button`
 
   background-color: transparent;
   border: 0;
+  cursor: pointer;
 
   span {
     font-size: 1rem;

@@ -1,10 +1,10 @@
 import { HeaderSection, IntroSectionContainer, Item, ItemSection, ItemsSection, TitleSection } from "./styles"
 
-import coffeImage from '../../assets/coffee-image.svg'
-import itemSectionIcon1 from '../../assets/item-section-icon-1.svg'
-import itemSectionIcon2 from '../../assets/item-section-icon-2.svg'
-import itemSectionIcon3 from '../../assets/item-section-icon-3.svg'
-import itemSectionIcon4 from '../../assets/item-section-icon-4.svg'
+import coffeImage from '../../../../assets/coffee-image.svg'
+import itemSectionIcon1 from '../../../../assets/item-section-icon-1.svg'
+import itemSectionIcon2 from '../../../../assets/item-section-icon-2.svg'
+import itemSectionIcon3 from '../../../../assets/item-section-icon-3.svg'
+import itemSectionIcon4 from '../../../../assets/item-section-icon-4.svg'
 
 export const IntroSection = () => {
   return (

@@ -13,7 +13,7 @@ import {
   ItemPriceCard
 } from './styles'
 
-import cartIcon from '../../../../assets/shop-cart-icon.svg'
+import cartIcon from '../../../../../../assets/shop-cart-icon.svg'
 
 export type ItemCardProps = {
   imgSRC: string

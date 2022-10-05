@@ -3,10 +3,9 @@ import styled from 'styled-components'
 export const IntroSectionContainer = styled.div`
   display: flex;
   align-items: center;
+
   justify-content: space-between;
   margin-top: 94px;
-
-  gap: 60px;
 `
  
 export const HeaderSection = styled.div``
@@ -33,7 +32,7 @@ export const TitleSection = styled.div`
 export const ItemsSection = styled.div`
   margin-top: 66px;
   display: flex;
-  gap: 40px;
+  gap: 30px;
 `
 export const ItemSection = styled.div`
   align-items: center;
@@ -44,7 +43,7 @@ export const Item = styled.div`
   align-items: center;
   margin-bottom: 25px;
 
-  gap: 12px;
+  gap: 10px;
 
   span {
     font-size: 1rem;

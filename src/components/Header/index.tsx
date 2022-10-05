@@ -15,7 +15,7 @@ export const Header = () => {
           <img src={geolocationIcon} />
           <span>Porto Alegre, RS</span>
         </HeaderLocation>
-        <NavLink to='/cart'>
+        <NavLink to='/checkout'>
           <CartButtonContainer>
            <img src={cartIcon} />
           </CartButtonContainer>
