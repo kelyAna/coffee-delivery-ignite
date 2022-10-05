@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const ItemCardContainer = styled.div`
-  width: 256px;
-  height: 310px;
+  width: 16rem;
+  height: 19.375rem;
 
   text-align: center;
   background: #F3F2F2;
@@ -11,7 +11,7 @@ export const ItemCardContainer = styled.div`
   align-items: center;
   justify-content: center;
 
-  padding: 0px 24px 20px 24px;
+  padding-bottom: 1.5rem;
 `
 
 export const ItemCardContainerHeader = styled.h2`
