@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
-export const SelectedItemsListContainer = styled.div``
+export const SelectedItemsListContainer = styled.div`
+  width: 300px;
+`
 
 export const CoffeeCard = styled.div`
   padding: 2.5rem;
   gap: 1.5rem;
 
-  width: 28rem;
+  width: 23rem;
   height: 31.125rem;
 
   font-family: 'Roboto';
@@ -15,7 +17,7 @@ export const CoffeeCard = styled.div`
   text-align: center;
   justify-content: center;
 
-  background: #F3F2F2;
+  background: var(--gray-100);
   border-radius: 6px 44px;
 `
 
@@ -24,11 +26,11 @@ export const CoffeeCardHeader = styled.div`
   display: flex;
 
   align-items: center;
-  color: #403937;
+  color: var(--base-header);
 
   h4 {
     margin-left: 60px;
-    color: #574F4D;
+    color: var(--base-text);;
   }
 `
 
@@ -71,7 +73,7 @@ export const OrderLineSection = styled.div`
   margin-bottom: 12px;
 
   align-items: center;
-  color: #403937;
+  color: var(--base-header);
 `
 
 export const CoffeeImage = styled.img`
@@ -91,7 +93,7 @@ export const Actions = styled.div`
 `
 
 export const Divider = styled.div`
-  border: 0.05rem solid #E6E5E5;
+  border: 0.05rem solid var(--gray-200);
 
   width: 368px;
 
@@ -117,9 +119,9 @@ export const TrashButton = styled.button`
 
   cursor: pointer;
 
-  background: #E6E5E5;
+  background: var(--gray-200);
   border-radius: 6px;
-  color: #574F4D;
+  color: var(--base-text);
 
   border: none;
 `

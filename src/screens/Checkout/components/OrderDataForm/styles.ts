@@ -13,19 +13,19 @@ export const OrderDataFormContainer = styled.div`
   }
 
   p {
-    color: #403937;
+    color: var(--base-header);
     font-size: 1rem;
     margin-bottom: 0.5rem;
   }
 
   span {
-    color: #574F4D;
+    color: var(--base-text);
     font-size: 0.875rem;
   }
 `
 
 export const TitleSection = styled.p`
-  color: #403937;
+  color: var(--base-header);
   font-size: 1rem;
   margin-bottom: 0.5rem;
 
@@ -42,7 +42,7 @@ export const AddressFormContainer = styled.form`
 `
 
 export const AddressForm = styled.form`
-  background: #F3F2F2;
+  background: var(--gray-100);
   border-radius: 0.375rem;
 
   display: flex;
@@ -51,7 +51,7 @@ export const AddressForm = styled.form`
   padding: 2.5rem;
   gap: 2rem;
 
-  width: 640px;
+  width: 600px;
 `
 
 export const InputAddressForm = styled.textarea<InputAddressFormProps>`
@@ -94,7 +94,7 @@ export const PaymentForm = styled.div`
 
   label {
     display: flex;
-    background-color: #E6E5E5;
+    background-color: var(--gray-200);
 
     padding: 1rem;
 
@@ -107,7 +107,7 @@ export const PaymentForm = styled.div`
     width: 178.67px;
     height: 21px;
 
-    color: #574F4D;
+    color: var(--base-text);;
 
     img {
       margin: auto 0px auto 0px;

@@ -4,11 +4,11 @@ import { Router } from './Router'
 import './global.css'
 
 function App() {
-  return(
-    <BrowserRouter>
-      <Router />
-    </BrowserRouter>
-  )
+	return(
+		<BrowserRouter>
+			<Router />
+		</BrowserRouter>
+	)
 }
 
 export default App

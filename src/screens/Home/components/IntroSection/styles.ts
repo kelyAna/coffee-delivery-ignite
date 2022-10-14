@@ -22,7 +22,7 @@ export const TitleSection = styled.div`
 
     p {
       font-size: 1.25rem;
-      color: #403937;
+      color: var(--base-header);
 
       width: 500px;
     }

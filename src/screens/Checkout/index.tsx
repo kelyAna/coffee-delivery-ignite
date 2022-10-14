@@ -1,12 +1,12 @@
-import { OrderDataForm } from "./components/OrderDataForm"
-import { SelectedItemsList } from "./components/SelectedItemsList"
-import { CheckoutContainer } from "./styles"
+import { OrderDataForm } from './components/OrderDataForm'
+import { SelectedItemsList } from './components/SelectedItemsList'
+import { CheckoutContainer } from './styles'
 
 export const Checkout = () => {
-  return (
-    <CheckoutContainer>
-      <OrderDataForm />
-      <SelectedItemsList />
-    </CheckoutContainer>
-  )
+	return (
+		<CheckoutContainer>
+			<OrderDataForm />
+			<SelectedItemsList />
+		</CheckoutContainer>
+	)
 }

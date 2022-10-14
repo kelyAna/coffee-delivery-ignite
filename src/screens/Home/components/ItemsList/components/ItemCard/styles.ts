@@ -5,7 +5,7 @@ export const ItemCardContainer = styled.div`
   height: 19.375rem;
 
   text-align: center;
-  background: #F3F2F2;
+  background: var(--gray-100);
   border-radius: 6px 36px;
 
   align-items: center;

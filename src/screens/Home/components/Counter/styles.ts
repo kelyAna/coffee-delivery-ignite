@@ -6,7 +6,7 @@ export const CounterContainer = styled.div`
   justify-content: space-between;
   display: flex;
 
-  background-color: #E6E5E5;
+  background-color: var(--gray-200);
   border-radius: 6px;
   padding: 0.5rem;
 

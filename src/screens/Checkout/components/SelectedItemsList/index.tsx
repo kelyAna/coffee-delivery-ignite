@@ -1,9 +1,21 @@
-import { Counter } from "../../../Home/components/Counter"
-import { TitleSection } from "../OrderDataForm/styles"
-import { Actions, CoffeeCard, CoffeeCardHeader, CoffeeImage, CoffeeSelected, ConfirmButton, Divider, OrderLineSection, OrderTotalSection, SelectedItemsListContainer, TrashButton } from "./styles"
+import { Counter } from '../../../Home/components/Counter';
+import { TitleSection } from '../OrderDataForm/styles';
+import {
+  Actions,
+  CoffeeCard,
+  CoffeeCardHeader,
+  CoffeeImage,
+  CoffeeSelected,
+  ConfirmButton,
+  Divider,
+  OrderLineSection,
+  OrderTotalSection,
+  SelectedItemsListContainer,
+  TrashButton,
+} from './styles';
 
-import img from '../../../Home/components/ItemsList/components/ItemCard/assets/Image-2.svg'
-import trashIcon from './assets/trash.svg'
+import img from '../../../Home/components/ItemsList/components/ItemCard/assets/Image-2.svg';
+import trashIcon from './assets/trash.svg';
 export const SelectedItemsList = () => {
   return (
     <SelectedItemsListContainer>
@@ -12,10 +24,10 @@ export const SelectedItemsList = () => {
         <CoffeeSelected>
           <CoffeeImage src={img} alt="" />
           <div>
-           <CoffeeCardHeader>
-             <p>Expresso Tradicional</p>
-             <h4>R$ 9,90</h4>
-           </CoffeeCardHeader>
+            <CoffeeCardHeader>
+              <p>Expresso Tradicional</p>
+              <h4>R$ 9,90</h4>
+            </CoffeeCardHeader>
             <Actions>
               <Counter itemsQuantity={2} />
               <TrashButton>
@@ -29,10 +41,10 @@ export const SelectedItemsList = () => {
         <CoffeeSelected>
           <CoffeeImage src={img} alt="" />
           <div>
-           <CoffeeCardHeader>
-             <p>Expresso Tradicional</p>
-             <h4>R$ 9,90</h4>
-           </CoffeeCardHeader>
+            <CoffeeCardHeader>
+              <p>Expresso Tradicional</p>
+              <h4>R$ 9,90</h4>
+            </CoffeeCardHeader>
             <Actions>
               <Counter itemsQuantity={2} />
               <TrashButton>
@@ -61,7 +73,6 @@ export const SelectedItemsList = () => {
           <span>CONFIRMAR PEDIDO</span>
         </ConfirmButton>
       </CoffeeCard>
-      
     </SelectedItemsListContainer>
-  )
-}
+  );
+};
