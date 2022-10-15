@@ -1,27 +1,32 @@
-import { ItemCard } from "./components/ItemCard"
-import { ItemCardContainerHeader } from "./components/ItemCard/styles"
-import { ItemsSectionContainer, ItemList } from "./styles"
+import { ItemCard } from './components/ItemCard'
+import { ItemCardContainerHeader } from './components/ItemCard/styles'
+import { ItemsSectionContainer, ItemList } from './styles'
 
-import { COFFEES } from './components/ItemCard/utils/coffeList'
+import { CartContext } from '../../../../contexts/CartContext'
 
 export const ItemsList = () => {
   return (
-    <ItemsSectionContainer>
-      <ItemCardContainerHeader>Nossos cafés</ItemCardContainerHeader>
-      <ItemList>
-        {COFFEES.map((caffee) => {
-          return (
-            <ItemCard 
-              imgSRC={caffee.imgSRC} 
-              tags={caffee.tags} 
-              name={caffee.name} 
-              description={caffee.description} 
-              price={"9,90"} 
-              itemsQuantity={0}
-            />
-          )
-        })}
-      </ItemList>
-    </ItemsSectionContainer>
+    <CartContext.Consumer>
+      {(context) => (
+        <ItemsSectionContainer>
+          <ItemCardContainerHeader>Nossos cafés</ItemCardContainerHeader>
+          <ItemList>
+            {context.items.map((coffee) => {
+              return (
+                <ItemCard
+                  imgSRC={coffee.imgSRC}
+                  tags={coffee.tags}
+                  name={coffee.name}
+                  description={coffee.description}
+                  price={'9,90'}
+                  increaseQuantity={context.addItemToCart.bind(this, coffee)}
+                  decreaseQuantity={context.removeItemFromCart.bind(this, coffee.id)}
+                />
+              )
+            })}
+          </ItemList>
+        </ItemsSectionContainer>
+      )}
+    </CartContext.Consumer>
   )
 }

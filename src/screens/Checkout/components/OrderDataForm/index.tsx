@@ -6,14 +6,14 @@ import {
   OrderDataFormContainer,
   PaymentForm,
   TitleSection,
-} from './styles';
+} from './styles'
 
-import iconLocalization from './assets/Icon-5.svg';
-import creditCardIcon from './assets/Icon-7.svg';
-import debitCardIcon from './assets/Icon-8.svg';
-import moneyIcon from './assets/Icon-9.svg';
+import iconLocalization from './assets/Icon-5.svg'
+import creditCardIcon from './assets/Icon-7.svg'
+import debitCardIcon from './assets/Icon-8.svg'
+import moneyIcon from './assets/Icon-9.svg'
 
-import paymentIcon from './assets/Icon-6.svg';
+import paymentIcon from './assets/Icon-6.svg'
 
 export const OrderDataForm = () => {
   return (
@@ -99,5 +99,5 @@ export const OrderDataForm = () => {
         </AddressForm>
       </AddressFormContainer>
     </OrderDataFormContainer>
-  );
-};
+  )
+}

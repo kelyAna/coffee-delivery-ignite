@@ -1,17 +1,24 @@
-import { CounterButton, CounterContainer, ItemsQuantity } from "./styles"
+import { CounterButton, CounterContainer, ItemsQuantity } from './styles'
 
 export type CounterProps = {
   itemsQuantity: number
+  increaseQuantity?: () => void
+  decreaseQuantity?: () => void
 }
 
-export const Counter = ({itemsQuantity}: CounterProps) => {
+export const Counter = ({
+  itemsQuantity,
+  decreaseQuantity,
+  increaseQuantity,
+}: CounterProps) => {
+  const disabledMinusButton = itemsQuantity === 0
   return (
     <CounterContainer>
-      <CounterButton>
+      <CounterButton onClick={decreaseQuantity} disabled={disabledMinusButton}>
         <span>-</span>
       </CounterButton>
       <ItemsQuantity>{itemsQuantity}</ItemsQuantity>
-      <CounterButton>
+      <CounterButton onClick={increaseQuantity}>
         <span>+</span>
       </CounterButton>
     </CounterContainer>

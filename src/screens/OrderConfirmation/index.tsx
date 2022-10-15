@@ -4,12 +4,12 @@ import {
   OrderConfirmationSection,
   OrderInfoSection,
   OrderInfoSectionLine,
-} from './styles';
+} from './styles'
 
-import deliveryIcon from '../../assets/delivery.svg';
-import localizationIcon from '../../assets/localization-icon.svg';
-import timerIcon from '../../assets/timer-icon.svg';
-import moneyIcon from '../../assets/money-icon.svg';
+import deliveryIcon from '../../assets/delivery.svg'
+import localizationIcon from '../../assets/localization-icon.svg'
+import timerIcon from '../../assets/timer-icon.svg'
+import moneyIcon from '../../assets/money-icon.svg'
 
 export const OrderConfirmation = () => {
   return (
@@ -46,5 +46,5 @@ export const OrderConfirmation = () => {
         <img src={deliveryIcon} alt="" />
       </OrderInfoSection>
     </OrderConfirmationContainer>
-  );
-};
+  )
+}

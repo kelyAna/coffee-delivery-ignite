@@ -1,6 +1,6 @@
-import { IntroSection } from "./components/IntroSection"
-import { ItemsList } from "./components/ItemsList"
-import { HomeContainer } from "./styles"
+import { IntroSection } from './components/IntroSection'
+import { ItemsList } from './components/ItemsList'
+import { HomeContainer } from './styles'
 
 export const Home = () => {
   return (
