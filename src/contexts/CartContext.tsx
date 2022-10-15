@@ -1,17 +1,19 @@
-import coffeeImg1 from '../../../../../../../assets/Image.svg'
-import coffeeImg2 from '../../../../../../../assets/Image-5.svg'
-import coffeeImg3 from '../../../../../../../assets/Image-9.svg'
-import coffeeImg4 from '../../../../../../../assets/Image-12.svg'
-import coffeeImg5 from '../../../../../../../assets/Image-2.svg'
-import coffeeImg6 from '../../../../../../../assets/Image-6.svg'
-import coffeeImg7 from '../../../../../../../assets/Image-10.svg'
-import coffeeImg8 from '../../../../../../../assets/Image-13.svg'
-import coffeeImg9 from '../../../../../../../assets/Image-3.svg'
-import coffeeImg10 from '../../../../../../../assets/Image-7.svg'
-import coffeeImg11 from '../../../../../../../assets/Image-11.svg'
-import coffeeImg12 from '../../../../../../../assets/Image-14.svg'
-import coffeeImg13 from '../../../../../../../assets/Image-4.svg'
-import coffeeImg14 from '../../../../../../../assets/Image-8.svg'
+import { createContext } from 'react'
+
+import coffeeImg1 from '../assets/Image.svg'
+import coffeeImg2 from '../assets/Image-5.svg'
+import coffeeImg3 from '../assets/Image-9.svg'
+import coffeeImg4 from '../assets/Image-12.svg'
+import coffeeImg5 from '../assets/Image-2.svg'
+import coffeeImg6 from '../assets/Image-6.svg'
+import coffeeImg7 from '../assets/Image-10.svg'
+import coffeeImg8 from '../assets/Image-13.svg'
+import coffeeImg9 from '../assets/Image-3.svg'
+import coffeeImg10 from '../assets/Image-7.svg'
+import coffeeImg11 from '../assets/Image-11.svg'
+import coffeeImg12 from '../assets/Image-14.svg'
+import coffeeImg13 from '../assets/Image-4.svg'
+import coffeeImg14 from '../assets/Image-8.svg'
 
 export const COFFEES = [
   {
@@ -113,3 +115,24 @@ export const COFFEES = [
     tags: ["ESPECIAL", "ALCOÓLICO"]
   },
 ]
+
+
+export const initialQuantity = {
+  cart: {},
+  dispatch: () => {},
+}
+
+export type CoffeType = {
+  id: string
+  name: string
+  imgSRC: string
+  description: string
+  tags: string[]
+}
+
+export const CartContext = createContext({
+  items: COFFEES,
+  cart: [],
+  addItemToCart: (item: CoffeType) => {},
+  removeItemFromCart: (itemId: string) => {},
+})

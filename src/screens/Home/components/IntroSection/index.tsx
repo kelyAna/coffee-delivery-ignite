@@ -1,4 +1,4 @@
-import { HeaderSection, IntroSectionContainer, Item, ItemSection, ItemsSection, TitleSection } from "./styles"
+import { HeaderSection, IntroSectionContainer, Item, ItemSection, ItemsSection, TitleSection } from './styles'
 
 import coffeImage from '../../../../assets/coffee-image.svg'
 import itemSectionIcon1 from '../../../../assets/item-section-icon-1.svg'

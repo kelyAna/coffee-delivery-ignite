@@ -1,19 +1,21 @@
 import { NavLink } from 'react-router-dom'
 import { Counter } from '../../../Counter'
-import { 
-  ItemActionsCard, 
-  ItemBuyCard, 
-  ItemCardContainer, 
-  ItemCardTag, 
-  ItemCardTagList, 
-  ItemCart, 
-  ItemCartImage, 
-  ItemDescriptionCard, 
-  ItemNameCard, 
-  ItemPriceCard
+import {
+  ItemActionsCard,
+  ItemBuyCard,
+  ItemCardContainer,
+  ItemCardTag,
+  ItemCardTagList,
+  ItemCart,
+  ItemCartImage,
+  ItemDescriptionCard,
+  ItemNameCard,
+  ItemPriceCard,
 } from './styles'
 
 import cartIcon from '../../../../../../assets/shop-cart-icon.svg'
+import { useState } from 'react'
+import { CartContext } from '../../../../../../contexts/CartContext'
 
 export type ItemCardProps = {
   imgSRC: string
@@ -21,7 +23,8 @@ export type ItemCardProps = {
   name: string
   description: string
   price: string
-  itemsQuantity: number
+  increaseQuantity: () => void
+  decreaseQuantity: () => void
 }
 
 export const ItemCard = ({
@@ -30,32 +33,45 @@ export const ItemCard = ({
   name,
   description,
   price,
-  itemsQuantity
+  increaseQuantity,
+  decreaseQuantity
 }: ItemCardProps) => {
-  return (
-    <ItemCardContainer>
-      <ItemCartImage src={imgSRC} />
-      <ItemCardTagList>
-        {tags.map((tag) => <ItemCardTag>
-          <span>{tag}</span>
-        </ItemCardTag>)}
-      </ItemCardTagList>
-      <ItemNameCard>{name}</ItemNameCard>
-      <ItemDescriptionCard>{description}</ItemDescriptionCard>
+  const [itemsQuantity, setItemsQuantity] = useState(0)
 
-      <ItemBuyCard>
-        <ItemPriceCard>
-          <p>R$</p> <h2>{price}</h2>
-        </ItemPriceCard>
-        <ItemActionsCard>
-          <Counter itemsQuantity={itemsQuantity} />
-          <NavLink to='/cart'>
-            <ItemCart>
-             <img src={cartIcon} />
-            </ItemCart>
-        </NavLink>
-        </ItemActionsCard>
-      </ItemBuyCard>
-    </ItemCardContainer>
+  return (
+    <CartContext.Consumer>
+      {(context) => (
+        <ItemCardContainer>
+          <ItemCartImage src={imgSRC} />
+          <ItemCardTagList>
+            {tags.map((tag) => (
+              <ItemCardTag>
+                <span>{tag}</span>
+              </ItemCardTag>
+            ))}
+          </ItemCardTagList>
+          <ItemNameCard>{name}</ItemNameCard>
+          <ItemDescriptionCard>{description}</ItemDescriptionCard>
+
+          <ItemBuyCard>
+            <ItemPriceCard>
+              <p>R$</p> <h2>{price}</h2>
+            </ItemPriceCard>
+            <ItemActionsCard>
+              <Counter
+                itemsQuantity={itemsQuantity}
+                increaseQuantity={increaseQuantity}
+                decreaseQuantity={decreaseQuantity}
+              />
+              <NavLink to="/checkout">
+                <ItemCart>
+                  <img src={cartIcon} />
+                </ItemCart>
+              </NavLink>
+            </ItemActionsCard>
+          </ItemBuyCard>
+        </ItemCardContainer>
+      )}
+    </CartContext.Consumer>
   )
 }
