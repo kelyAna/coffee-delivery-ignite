@@ -1,11 +1,11 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
-import { CartButtonContainer, HeaderContainer, HeaderLocation } from './styles';
+import { CartButtonContainer, HeaderContainer, HeaderLocation } from './styles'
 
-import coffeDeliveryLogo from '../../assets/coffee-delivery-logo.svg';
-import cartIcon from '../../assets/cart-icon.svg';
-import geolocationIcon from '../../assets/geolocation-icon.svg';
-import { CartContext } from '../../contexts/CartContext';
+import coffeDeliveryLogo from '../../assets/coffee-delivery-logo.svg'
+import cartIcon from '../../assets/cart-icon.svg'
+import geolocationIcon from '../../assets/geolocation-icon.svg'
+import { CartContext } from '../../contexts/CartContext'
 
 export const Header = () => {
   return (
@@ -36,5 +36,5 @@ export const Header = () => {
         </HeaderContainer>
       )}
     </CartContext.Consumer>
-  );
-};
+  )
+}
