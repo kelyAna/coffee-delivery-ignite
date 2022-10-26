@@ -14,8 +14,10 @@ import debitCardIcon from './assets/Icon-8.svg'
 import moneyIcon from './assets/Icon-9.svg'
 
 import paymentIcon from './assets/Icon-6.svg'
+import { useRef } from 'react'
 
 export const OrderDataForm = () => {
+  const portalRef = useRef(null)
   return (
     <OrderDataFormContainer>
       <TitleSection>Complete seu pedido</TitleSection>

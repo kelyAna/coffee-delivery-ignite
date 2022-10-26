@@ -2,15 +2,15 @@ import { BrowserRouter } from 'react-router-dom'
 import { Router } from './Router'
 
 import './global.css'
-import { GlobalState } from './reducers/itemsCart/CartState'
+import { CartContextProvider } from './contexts/CartContext'
 
 function App() {
   return (
-    <GlobalState>
-      <BrowserRouter>
+    <BrowserRouter>
+      <CartContextProvider>
         <Router />
-      </BrowserRouter>
-    </GlobalState>
+      </CartContextProvider>
+    </BrowserRouter>
   )
 }
 
