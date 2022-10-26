@@ -18,7 +18,6 @@ import trashIcon from './assets/trash.svg';
 import { useContext, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { CartContext } from '../../../../contexts/CartContext';
-import { removeProductFromCart } from '../../../../reducers/itemsCart/actions';
 
 export const SelectedItemsList = () => {
   const { cart, removeItemFromCart } = useContext(CartContext);

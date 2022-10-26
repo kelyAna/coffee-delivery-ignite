@@ -21,7 +21,7 @@ export type ItemCardProps = {
   tags: string[];
   name: string;
   description: string;
-  price: string;
+  price: number;
   increaseQuantity: () => void
   decreaseQuantity: () => void
 };
