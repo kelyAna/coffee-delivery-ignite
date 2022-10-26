@@ -1,5 +1,5 @@
-import { Counter } from '../../../Home/components/Counter'
-import { TitleSection } from '../OrderDataForm/styles'
+import { Counter } from '../../../Home/components/Counter';
+import { TitleSection } from '../OrderDataForm/styles';
 import {
   Actions,
   CoffeeCard,
@@ -12,68 +12,52 @@ import {
   OrderTotalSection,
   SelectedItemsListContainer,
   TrashButton,
-} from './styles'
+} from './styles';
 
-import img from '../../../../assets/Image-2.svg'
-import trashIcon from './assets/trash.svg'
-import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import trashIcon from './assets/trash.svg';
+import { useContext, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { CartContext } from '../../../../contexts/CartContext';
+import { removeProductFromCart } from '../../../../reducers/itemsCart/actions';
+
 export const SelectedItemsList = () => {
-  const [itemsQuantity, setItemsQuantity] = useState(0)
+  const { cart, removeItemFromCart } = useContext(CartContext);
+  const [itemsQuantity, setItemsQuantity] = useState(0);
+  let arrCart = [];
 
-  const handleIncreaseQuantityOfItemsClick = () => {
-    setItemsQuantity(itemsQuantity + 1)
+  for (var j = 0; j < cart.length; j++) {
+    arrCart.push(cart[j].item);
   }
 
-  const handleDecreaseQuantityOfItemsClick = () => {
-    setItemsQuantity(itemsQuantity - 1)
-  }
   return (
     <SelectedItemsListContainer>
       <TitleSection>Cafés selecionados</TitleSection>
       <CoffeeCard>
-        <CoffeeSelected>
-          <CoffeeImage src={img} alt="" />
-          <div>
-            <CoffeeCardHeader>
-              <p>Expresso Tradicional</p>
-              <h4>R$ 9,90</h4>
-            </CoffeeCardHeader>
-            <Actions>
-              <Counter
-                itemsQuantity={itemsQuantity}
-                increaseQuantity={handleIncreaseQuantityOfItemsClick}
-                decreaseQuantity={handleDecreaseQuantityOfItemsClick}
-              />
-              <TrashButton>
-                <img src={trashIcon} alt="" />
-                REMOVER
-              </TrashButton>
-            </Actions>
-          </div>
-        </CoffeeSelected>
-        <Divider />
-        <CoffeeSelected>
-          <CoffeeImage src={img} alt="" />
-          <div>
-            <CoffeeCardHeader>
-              <p>Expresso Tradicional</p>
-              <h4>R$ 9,90</h4>
-            </CoffeeCardHeader>
-            <Actions>
-              <Counter
-                itemsQuantity={itemsQuantity}
-                increaseQuantity={handleIncreaseQuantityOfItemsClick}
-                decreaseQuantity={handleDecreaseQuantityOfItemsClick}
-              />
-              <TrashButton>
-                <img src={trashIcon} alt="" />
-                REMOVER
-              </TrashButton>
-            </Actions>
-          </div>
-        </CoffeeSelected>
-        <Divider />
+        <>
+          {arrCart.map((item) => {
+            return (
+              <div key={item?.id}>
+                <CoffeeSelected>
+                  <CoffeeImage src={item?.imgSRC} alt="" />
+                  <div>
+                    <CoffeeCardHeader>
+                      <p>{item?.name}</p>
+                      <h4>R$ 9,90</h4>
+                    </CoffeeCardHeader>
+                    <Actions>
+                      <Counter itemsQuantity={itemsQuantity} />
+                      <TrashButton onClick={() => removeItemFromCart(item?.id)}>
+                        <img src={trashIcon} alt="" />
+                        REMOVER
+                      </TrashButton>
+                    </Actions>
+                  </div>
+                </CoffeeSelected>
+                <Divider />
+              </div>
+            );
+          })}
+        </>
         <OrderTotalSection>
           <OrderLineSection>
             <span>Total de itens</span>
@@ -95,5 +79,5 @@ export const SelectedItemsList = () => {
         </NavLink>
       </CoffeeCard>
     </SelectedItemsListContainer>
-  )
-}
+  );
+};

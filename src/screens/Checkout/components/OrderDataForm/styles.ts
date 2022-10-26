@@ -41,7 +41,7 @@ export const AddressFormContainer = styled.form`
   margin-bottom: 0.75rem;
 `
 
-export const AddressForm = styled.form`
+export const AddressForm = styled.div`
   background: var(--gray-100);
   border-radius: 0.375rem;
 

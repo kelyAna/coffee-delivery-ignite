@@ -9,7 +9,6 @@ export const CoffeeCard = styled.div`
   gap: 1.5rem;
 
   width: 23rem;
-  height: 31.125rem;
 
   font-family: 'Roboto';
 
