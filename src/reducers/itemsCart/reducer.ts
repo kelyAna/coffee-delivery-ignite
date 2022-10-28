@@ -25,10 +25,29 @@ const removeProductFromCart = (productId: string, state: any) => {
 }
 
 const addProductToCart = (product: CoffeProps, state: any) => {
-  const updatedCart = [...state.cart];
+  const updatedCart = [...state.cart]
+  let productId: string
 
-  updatedCart.push({ ...product })
-  
+  Object.values(product).map((item) => {
+    productId = Object.values(item)[0]
+  })
+
+  let arrCart: any[] = []
+
+  for (var j = 0; j < updatedCart.length; j++) {
+    arrCart.push(updatedCart[j].item)
+  }
+
+  const updatedItemIndex = arrCart.findIndex(item => item.id === productId)
+
+  if (updatedItemIndex < 0) {
+    updatedCart.push({ ...product, quantity: 1 })
+  } else {
+    const updatedItem = updatedCart[updatedItemIndex]
+    
+    updatedItem.quantity = updatedItem.quantity + 1
+    updatedCart[updatedItemIndex] = updatedItem;
+  }  
   return { ...state, cart: updatedCart }
 }
 

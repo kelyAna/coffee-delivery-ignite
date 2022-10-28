@@ -2,24 +2,34 @@ import { ItemCard } from './components/ItemCard';
 import { ItemCardContainerHeader } from './components/ItemCard/styles';
 import { ItemsSectionContainer, ItemList } from './styles';
 
-import { CartContext, CoffeProps } from '../../../../contexts/CartContext';
-import { useContext, useState } from 'react';
+import {
+  CartContext,
+  CoffeCardProps,
+  CoffeProps,
+} from '../../../../contexts/CartContext';
+import { useContext } from 'react';
 
 export const ItemsList = () => {
   const { addItemToCart, items, removeItemFromCart, cart } =
-    useContext(CartContext)
+    useContext(CartContext);
 
-  const [itemsQuantity, setItemsQuantity] = useState(0)
-  let arrCart = []
+  let arrCart: CoffeCardProps[] = []
+  let arrItems: any[] = []
 
   for (var j = 0; j < cart.length; j++) {
-    arrCart.push(cart[j].item)
+    arrCart.push(cart[j])
   }
 
   const addItemToCartClick = (coffe: CoffeProps) => {
-    setItemsQuantity(itemsQuantity + 1)
-
+    coffe.quantity++
+    console.log(coffe.quantity)
     addItemToCart(coffe)
+  }
+
+  const removeItemFromCartClick = (coffe: CoffeProps) => {
+    coffe.quantity--
+    console.log(coffe.quantity)
+    removeItemFromCart(coffe.id)
   }
 
   return (
@@ -34,9 +44,10 @@ export const ItemsList = () => {
               tags={coffee.tags}
               name={coffee.name}
               description={coffee.description}
-              price={itemsQuantity * 9.90}
+              price={(2 * 9.9).toFixed(2)}
               increaseQuantity={() => addItemToCartClick(coffee)}
-              decreaseQuantity={() => removeItemFromCart.bind(coffee.id)}
+              decreaseQuantity={() => removeItemFromCartClick(coffee)}
+              itemsQuantity={coffee.quantity}
             />
           );
         })}

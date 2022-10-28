@@ -1,4 +1,3 @@
-import { CoffeProps } from '../../../../contexts/CartContext'
 import { CounterButton, CounterContainer, ItemsQuantity } from './styles'
 
 export type CounterProps = {
