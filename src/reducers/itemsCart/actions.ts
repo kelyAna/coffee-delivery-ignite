@@ -11,7 +11,7 @@ export const addProductToCartAction = (item: CoffeProps) => {
   return {
     type: ActionTypes.ADD_ITEM_TO_CART,
     payload: {
-      item
+      item,
     }
   }
 }

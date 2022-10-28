@@ -27,9 +27,12 @@ export const CoffeeCardHeader = styled.div`
   align-items: center;
   color: var(--base-header);
 
+  width: 268px;
+
   h4 {
     margin-left: 60px;
-    color: var(--base-text);;
+    color: var(--base-text);
+    text-align: end;
   }
 `
 
@@ -38,10 +41,8 @@ export const CoffeeSelected = styled.div`
   flex-direction: row;
 
   display: flex;
-  justify-content: center;
 
-  gap: 1.25rem;
-
+  gap: 2rem;
   height: 80px;
 `
 

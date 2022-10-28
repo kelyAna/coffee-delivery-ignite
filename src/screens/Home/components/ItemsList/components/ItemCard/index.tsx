@@ -21,9 +21,10 @@ export type ItemCardProps = {
   tags: string[];
   name: string;
   description: string;
-  price: number;
+  price: string;
   increaseQuantity: () => void
   decreaseQuantity: () => void
+  itemsQuantity: number
 };
 
 export const ItemCard = ({
@@ -34,9 +35,8 @@ export const ItemCard = ({
   price,
   increaseQuantity,
   decreaseQuantity,
+  itemsQuantity
 }: ItemCardProps) => {
-  const [itemsQuantity, setItemsQuantity] = useState(0)
-
   return (
     <ItemCardContainer>
       <ItemCartImage src={imgSRC} />

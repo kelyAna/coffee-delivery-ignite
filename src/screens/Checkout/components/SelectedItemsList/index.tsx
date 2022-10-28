@@ -20,12 +20,11 @@ import { NavLink } from 'react-router-dom';
 import { CartContext } from '../../../../contexts/CartContext';
 
 export const SelectedItemsList = () => {
-  const { cart, removeItemFromCart } = useContext(CartContext);
-  const [itemsQuantity, setItemsQuantity] = useState(0);
-  let arrCart = [];
+  const { cart, removeItemFromCart } = useContext(CartContext)
+  let arrCart = []
 
   for (var j = 0; j < cart.length; j++) {
-    arrCart.push(cart[j].item);
+    arrCart.push(cart[j])
   }
 
   return (
@@ -35,17 +34,17 @@ export const SelectedItemsList = () => {
         <>
           {arrCart.map((item) => {
             return (
-              <div key={item?.id}>
-                <CoffeeSelected>
-                  <CoffeeImage src={item?.imgSRC} alt="" />
+              <>
+                <CoffeeSelected key={item?.item.id}>
+                  <CoffeeImage src={item?.item.imgSRC} alt="" />
                   <div>
                     <CoffeeCardHeader>
-                      <p>{item?.name}</p>
+                      <p>{item?.item.name}</p>
                       <h4>R$ 9,90</h4>
                     </CoffeeCardHeader>
                     <Actions>
-                      <Counter itemsQuantity={itemsQuantity} />
-                      <TrashButton onClick={() => removeItemFromCart(item?.id)}>
+                      <Counter itemsQuantity={item?.quantity} />
+                      <TrashButton onClick={() => removeItemFromCart(item?.item.id)}>
                         <img src={trashIcon} alt="" />
                         REMOVER
                       </TrashButton>
@@ -53,7 +52,7 @@ export const SelectedItemsList = () => {
                   </div>
                 </CoffeeSelected>
                 <Divider />
-              </div>
+              </>
             );
           })}
         </>
