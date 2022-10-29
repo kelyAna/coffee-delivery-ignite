@@ -15,9 +15,19 @@ export const ItemsList = () => {
 
   let arrCart: CoffeCardProps[] = []
 
-  for (var j = 0; j < cart.length; j++) {
+  for (var j = 0; j < cart?.length; j++) {
     arrCart.push(cart[j])
   }
+
+  function getCart() {
+    const carrinho = localStorage.getItem('@coffe-delivery')
+
+    return carrinho ? JSON.parse(carrinho) : []
+  }
+
+  const c = getCart
+
+  console.log(c)
 
   const addItemToCartClick = (coffe: CoffeProps) => {
     coffe.quantity++

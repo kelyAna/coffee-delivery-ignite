@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useReducer, useState } from 'react'
+import { createContext, ReactNode, useEffect, useReducer, useState } from 'react'
 
 import coffeeImg1 from '../assets/Image.svg'
 import coffeeImg2 from '../assets/Image-5.svg'
@@ -166,12 +166,15 @@ type CartContextProviderProps = {
   children: ReactNode
 }
 
+const cartInitialState = localStorage.getItem('@coffe-delivery')
+
 export const initialState = {
-  cart: [],
+  cart: cartInitialState !== null ? JSON.parse(cartInitialState) : []
 }
 
 export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const [cartState, dispatch] = useReducer(cartReducer, initialState)
+ 
   const items = COFFEES
 
   const removeItemFromCart = (itemId: string) => {
@@ -181,6 +184,12 @@ export const CartContextProvider = ({ children }: CartContextProviderProps) => {
   const addItemToCart = (item: CoffeProps) => {
     dispatch(addProductToCartAction(item))
   }
+
+  useEffect(() => {
+    const stateJSON = JSON.stringify(cartState.cart)
+
+    localStorage.setItem('@coffe-delivery', stateJSON)
+  }, [cartState.cart])
 
   return (
     <CartContext.Provider
