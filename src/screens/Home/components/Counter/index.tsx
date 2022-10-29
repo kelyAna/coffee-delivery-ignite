@@ -4,17 +4,18 @@ export type CounterProps = {
   itemsQuantity: number
   increaseQuantity?: () => void
   decreaseQuantity?: () => void
+  disabled: boolean
 }
 
 export const Counter = ({
   itemsQuantity,
   decreaseQuantity,
   increaseQuantity,
+  disabled
 }: CounterProps) => {
-  const disabledMinusButton = itemsQuantity === 0
   return (
     <CounterContainer>
-      <CounterButton onClick={decreaseQuantity} disabled={disabledMinusButton}>
+      <CounterButton onClick={decreaseQuantity} disabled={disabled}>
         <span>-</span>
       </CounterButton>
       <ItemsQuantity>{itemsQuantity}</ItemsQuantity>

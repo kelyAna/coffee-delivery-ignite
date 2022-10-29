@@ -30,7 +30,6 @@ export const CoffeeCardHeader = styled.div`
   width: 268px;
 
   h4 {
-    margin-left: 60px;
     color: var(--base-text);
     text-align: end;
   }
