@@ -1,15 +1,15 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'
 
-import { CartButtonContainer, HeaderContainer, HeaderLocation } from './styles';
+import { CartButtonContainer, CartLength, HeaderContainer, HeaderLocation } from './styles'
 
-import coffeDeliveryLogo from '../../assets/coffee-delivery-logo.svg';
-import cartIcon from '../../assets/cart-icon.svg';
-import geolocationIcon from '../../assets/geolocation-icon.svg';
-import { CartContext } from '../../contexts/CartContext';
-import { useContext } from 'react';
+import coffeDeliveryLogo from '../../assets/coffee-delivery-logo.svg'
+import cartIcon from '../../assets/cart-icon.svg'
+import geolocationIcon from '../../assets/geolocation-icon.svg'
+import { CartContext } from '../../contexts/CartContext'
+import { useContext } from 'react'
 
 export const Header = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useContext(CartContext)
 
   return (
     <HeaderContainer>
@@ -22,8 +22,9 @@ export const Header = () => {
         <NavLink to="/checkout">
           {cart?.length !== 0 ? (
             <>
-              <div>{cart?.length}</div>
               <CartButtonContainer>
+                <CartLength>{cart?.length}</CartLength>
+
                 <img src={cartIcon} />
               </CartButtonContainer>
             </>
@@ -35,5 +36,5 @@ export const Header = () => {
         </NavLink>
       </nav>
     </HeaderContainer>
-  );
-};
+  )
+}

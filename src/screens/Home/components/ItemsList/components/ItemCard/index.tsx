@@ -1,5 +1,5 @@
-import { NavLink } from 'react-router-dom';
-import { Counter } from '../../../Counter';
+import { NavLink } from 'react-router-dom'
+import { Counter } from '../../../Counter'
 import {
   ItemActionsCard,
   ItemBuyCard,
@@ -11,20 +11,20 @@ import {
   ItemDescriptionCard,
   ItemNameCard,
   ItemPriceCard,
-} from './styles';
+} from './styles'
 
-import cartIcon from '../../../../../../assets/shop-cart-icon.svg';
-import { useState } from 'react';
+import cartIcon from '../../../../../../assets/shop-cart-icon.svg'
 
 export type ItemCardProps = {
-  imgSRC: string;
-  tags: string[];
-  name: string;
-  description: string;
-  price: string;
+  imgSRC: string
+  tags: string[]
+  name: string
+  description: string
+  price: string
   increaseQuantity: () => void
   decreaseQuantity: () => void
   itemsQuantity: number
+  disabled: boolean
 };
 
 export const ItemCard = ({
@@ -35,7 +35,8 @@ export const ItemCard = ({
   price,
   increaseQuantity,
   decreaseQuantity,
-  itemsQuantity
+  itemsQuantity,
+  disabled
 }: ItemCardProps) => {
   return (
     <ItemCardContainer>
@@ -56,6 +57,7 @@ export const ItemCard = ({
         </ItemPriceCard>
         <ItemActionsCard>
           <Counter
+            disabled={disabled}
             itemsQuantity={itemsQuantity}
             increaseQuantity={increaseQuantity}
             decreaseQuantity={decreaseQuantity}

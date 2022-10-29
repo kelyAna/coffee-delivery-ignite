@@ -45,8 +45,8 @@ const addProductToCart = (product: CoffeProps, state: any) => {
   } else {
     const updatedItem = updatedCart[updatedItemIndex]
     
-    updatedItem.quantity = updatedItem.quantity + 1
-    updatedCart[updatedItemIndex] = updatedItem;
+    updatedItem.quantity++
+    updatedCart[updatedItemIndex] = updatedItem
   }  
   return { ...state, cart: updatedCart }
 }
